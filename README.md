@@ -200,7 +200,21 @@ If you use this package, please cite both the article and the archived artifact.
 }
 ```
 
-The artifact's own DOI is minted on archival deposit and is recorded here once assigned.
+The artifact is archived on Zenodo. Cite the version the article analysed:
+
+- **v1.0.0**, the exact state analysed in the article: <https://doi.org/10.5281/zenodo.22734804>
+- All versions: <https://doi.org/10.5281/zenodo.22734803>
+
+```bibtex
+@software{njeru2026executablegovernanceartifact,
+  author    = {Njeru, Oliver and Okanda, Paul},
+  title     = {Executable market data governance: artifact and validation harness},
+  version   = {v1.0.0},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22734804}
+}
+```
 
 ## Authors
 
