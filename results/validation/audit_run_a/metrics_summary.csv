@@ -1,0 +1,4 @@
+epoch,mean_sharpe,min_sharpe,max_sharpe,epoch_time_sec,avg_policy_loss,avg_value_loss,avg_entropy,mean_ann_vol,mean_sortino,mean_ann_return_pct,agent_A_sharpe,agent_B_sharpe,agent_A_total_reward,agent_B_total_reward,agent_A_max_drawdown,agent_B_max_drawdown,agent_A_ann_vol,agent_B_ann_vol,agent_A_sortino,agent_B_sortino,agent_A_ann_return_pct,agent_B_ann_return_pct,agent_A_total_turnover,agent_B_total_turnover
+1,0.1,-0.05,0.2,12.5,0.3,0.5,0.9,0.15,0.2,5.0,0.1,0.08,1.0,0.8,-0.05,-0.06,0.15,0.16,0.2,0.18,5.0,4.0,10.0,9.5
+2,0.11,0.0,0.22,12.6,0.28,0.48,0.88,0.14,0.22,6.0,0.11,0.09,1.2,0.9,-0.04,-0.05,0.14,0.15,0.22,0.2,6.0,5.0,10.5,10.0
+3,0.12,0.02,0.24,12.4,0.26,0.45,0.86,0.13,0.24,7.0,0.12,0.1,1.4,1.0,-0.03,-0.04,0.13,0.14,0.24,0.22,7.0,6.0,11.0,10.5

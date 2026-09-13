@@ -1,0 +1,66 @@
+Executable market data governance: artifact and validation harness
+
+Copyright 2026 Oliver Njeru
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+these files except in compliance with the License. You may obtain a copy of the
+License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+--------------------------------------------------------------------------------
+
+WHY THE COPYRIGHT LINE IS HERE AND NOT IN PER-FILE HEADERS
+
+Apache-2.0 is normally applied by adding a short copyright header to each source
+file. That is deliberately NOT done here.
+
+The source files in code/ are the object of study of the accompanying paper. The
+paper's claims are tied to specific file and line ranges through
+VERIFICATION_REPORT.md, and the paper states that the artifact is presented as
+the state that was analysed rather than as a deliverable to be improved. Inserting
+headers would shift every line number, break that correspondence, and edit the
+very thing the paper asks a reader to inspect unchanged.
+
+The NOTICE file is Apache-2.0's own mechanism for exactly this situation: a
+project-level attribution that applies to the distribution without modifying its
+contents. LICENSE is a pristine, unmodified copy of the canonical Apache-2.0 text
+(verified byte-equivalent against https://www.apache.org/licenses/LICENSE-2.0.txt),
+including its instructional appendix. The bracketed placeholder inside that
+appendix is part of the standard licence text and is intentionally left as-is;
+editing it would make the file diverge from canonical Apache-2.0 and stop
+automated licence scanners from recognising it.
+
+--------------------------------------------------------------------------------
+
+ACCOMPANYING PUBLICATION
+
+Njeru, O. and Okanda, P. (2026), "Market Data Governance as Knowledge Management:
+Managing Temporality via Rule Versioning, Provenance, and Auditability", VINE
+Journal of Information and Knowledge Management Systems, Emerald Publishing.
+https://doi.org/10.1108/VJIKMS-03-2026-0132
+
+--------------------------------------------------------------------------------
+
+THIRD-PARTY AND DATA NOTICES
+
+No third-party code is included.
+
+No real or licensed market data is included or redistributed. All prices, tickers
+and liquidity tiers are synthetic, generated deterministically by
+scripts/generate_synthetic_data.py with a fixed seed.
+
+Fee, calendar, settlement and price-limit values are approximations compiled by
+the authors from public sources (published legislation, published exchange rules,
+and published tax guidance) for academic use. They are not official data. See
+README.md, "Provenance and attribution", for what each class of value
+approximates and how far each was verified.
+
+This is a simulated research artifact, not a trading system. It is not connected
+to, endorsed by, or representative of any exchange, broker, depository, regulator
+or trading venue, and it does not execute, route or settle orders.

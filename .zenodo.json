@@ -1,0 +1,34 @@
+{
+  "upload_type": "software",
+  "title": "Executable market data governance: artifact and validation harness",
+  "description": "<p>The analysed file set and the V1-V5 validation harness accompanying the article \"Market Data Governance as Knowledge Management: Managing Temporality via Rule Versioning, Provenance, and Auditability\" (VINE Journal of Information and Knowledge Management Systems, Emerald Publishing, 2026).</p><p>It contains exactly the modules, configuration and fixtures the article's claims depend on, a harness that reproduces the five artifact-level validations reported in the article, and a report mapping each claim to the file and line range that evidences it. All data are synthetic, generated deterministically with a fixed seed. This is a simulated research artifact, not a trading system.</p>",
+  "creators": [
+    {
+      "name": "Njeru, Oliver",
+      "orcid": "0009-0008-6611-3813",
+      "affiliation": "United States International University - Africa"
+    },
+    {
+      "name": "Okanda, Paul",
+      "orcid": "0000-0001-5215-4368",
+      "affiliation": "United States International University - Africa"
+    }
+  ],
+  "license": "apache-2.0",
+  "access_right": "open",
+  "keywords": [
+    "knowledge management",
+    "market data governance",
+    "design science research",
+    "auditability",
+    "provenance",
+    "boundary objects"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.1108/VJIKMS-03-2026-0132",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Dependencies of the validation harness only.
+# The harness does not require PyTorch, SciPy, matplotlib or seaborn.
+# Version floors, not pins. The harness was executed under two environments and
+# produced an identical results object in both:
+#   numpy 2.2.5 / pandas 2.2.3 / PyYAML 6.0.2  (the pinned versions of the original repository)
+#   numpy 2.5.2 / pandas 3.0.5 / PyYAML 6.0.3
+numpy>=2.2
+pandas>=2.2
+PyYAML>=6.0

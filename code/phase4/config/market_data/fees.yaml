@@ -1,0 +1,179 @@
+# SIMULATED RESEARCH ARTIFACT -- NOT A TRADING SYSTEM.
+# This code is not connected to, endorsed by, or representative of any exchange, broker,
+# depository, regulator or trading venue, and it does not execute, route or settle orders.
+# Nothing here is legal, financial, tax, accounting or investment advice.
+# Fee, calendar, settlement and price-limit values are approximations compiled by the authors
+# from public sources for academic use. They are NOT official data and have NOT been verified
+# against the instruments they approximate. Do not rely on them for any real-world purpose.
+# See README.md (Provenance and attribution) for what each class of value approximates.
+equities_trading_fees:
+  shares_transaction_fees:
+    # Standard secondary market trading rates (non-day trading)
+    standard_rates:
+      - effective_from: 2002-01-01
+        effective_to: 2012-08-16
+        regulatory_period: "Pre-2012 estimates"
+        components:
+          brokerage_max_tiered:
+            small_trades:
+              threshold_kes: 100000
+              brokerage_max: 0.0178
+              total_investor_cost_estimate: 0.0210
+            large_trades:
+              threshold_over_kes: 100000
+              brokerage_max: 0.015
+              total_investor_cost_estimate: 0.0170
+          statutory_fees:
+            cma_investor_fee: 0.0012
+            icf_broker_contribution: 0.0001
+            exchange_fee: 0.0008 # 2002-2012
+            cdsc_fee: 0.0000 # 2002-2012
+          statutory_fee_payers:
+            cma_investor_fee: investor
+            icf_broker_contribution: broker
+            exchange_fee: investor
+            cdsc_fee: investor
+          odd_lots:
+            max_commission_kes: 100
+            value_threshold_kes: 3000
+            rate_above_threshold: 0.018
+
+      - effective_from: 2012-08-17
+        effective_to: 2016-03-10
+        regulatory_period: "Legal Notice 88/2012"
+        components:
+          brokerage_max_tiered:
+            small_trades:
+              threshold_kes: 100000
+              brokerage_max: 0.0178
+              total_investor_cost_estimate: 0.0210
+            large_trades:
+              threshold_over_kes: 100000
+              brokerage_max: 0.015 # Open to negotiation, maximum 1.5%
+              total_investor_cost_estimate: 0.0182 # 1.82% maximum total cost
+          statutory_fees:
+            cma_transaction_fee: 0.0012
+            cma_investor_compensation_fund_fee: 0.0001
+            exchange_transaction_fee: 0.0012
+            cdsc_transaction_fee: 0.0006
+            cdsc_guarantee_fund_fee: 0.0001
+          statutory_fee_payers:
+            cma_transaction_fee: investor
+            cma_investor_compensation_fund_fee: investor
+            exchange_transaction_fee: investor
+            cdsc_transaction_fee: investor
+            cdsc_guarantee_fund_fee: investor
+          odd_lots:
+            max_commission_kes: 100
+            value_threshold_kes: 3000
+            rate_above_threshold: 0.0178
+            notes: "Excluding statutory fees"
+
+      - effective_from: 2016-03-11
+        effective_to: 2022-08-11
+        regulatory_period: "Legal Notice 35/2016"
+        components:
+          brokerage_max_tiered:
+            small_trades:
+              threshold_kes: 100000
+              brokerage_max: 0.0176 # 1.76% net brokerage commission
+              total_investor_cost_estimate: 0.0210 # 2.10% maximum total cost
+            large_trades:
+              threshold_over_kes: 100000
+              brokerage_max: 0.0136 # Open to negotiation, subject to maximum 1.36%
+              total_investor_cost_estimate: 0.0182 # 1.82% maximum total cost
+          statutory_fees:
+            cma_transaction_fee: 0.0012
+            cma_investor_compensation_fund_fee: 0.0001
+            exchange_transaction_fee: 0.0012
+            cdsc_transaction_fee: 0.0008
+            cdsc_guarantee_fund_fee: 0.0001
+          statutory_fee_payers:
+            cma_transaction_fee: investor
+            cma_investor_compensation_fund_fee: investor
+            exchange_transaction_fee: investor
+            cdsc_transaction_fee: investor
+            cdsc_guarantee_fund_fee: investor
+          odd_lots:
+            max_commission_kes: 100
+            value_threshold_kes: 3000
+            rate_above_threshold: 0.0176
+            notes: "Excluding statutory fees"
+
+      - effective_from: 2022-08-12
+        effective_to: null
+        regulatory_period: "Legal Notice 135/2022"
+        components:
+          brokerage_max_tiered:
+            small_trades:
+              threshold_kes: 100000
+              brokerage_max: 0.0176 # 1.76% net brokerage commission
+              total_investor_cost_estimate: 0.0210 # 2.10% maximum total cost
+            large_trades:
+              threshold_over_kes: 100000
+              brokerage_max: 0.0136 # Open to negotiation, subject to maximum 1.36%
+              total_investor_cost_estimate: 0.0170 # 1.70% maximum total cost (reduced from 1.82%)
+          statutory_fees:
+            cma_transaction_fee: 0.0008
+            cma_investor_compensation_fund_fee: 0.0001
+            exchange_transaction_fee: 0.0012
+            cdsc_transaction_fee: 0.0001
+            cdsc_guarantee_fund_fee: 0.0001
+          statutory_fee_payers:
+            cma_transaction_fee: investor
+            cma_investor_compensation_fund_fee: investor
+            exchange_transaction_fee: investor
+            cdsc_transaction_fee: investor
+            cdsc_guarantee_fund_fee: investor
+          odd_lots:
+            upto_kes_3000:
+              commission_kes: 100 # Limited to Kshs 100
+            exceeding_kes_3000:
+              commission_rate: 0.0176 # Charged at prescribed rate of 1.76%
+
+    # Day trading rates
+    day_trading_rates:
+      definition: "Buying and selling or selling and buying of shares of the same security on the same account on the same day"
+      rebate_eligibility: "Any offsetting trades within the trading session will attract a day trading rebate"
+
+      periods:
+        - effective_from: 2017-03-27 # Approximate introduction of day trading guidelines
+          effective_to: 2022-08-11
+          regulatory_period: "Exchange Day Trading Guidelines (Pre-2022 statutory rates)"
+          components:
+            rebated_statutory_fees:
+              exchange_transaction_levy:
+                base_rate: 0.0012 # 0.12% base rate
+                rebate_percentage: 0.05 # 5% rebate
+                chargeable_levy_after_rebate: 0.00114
+              cma_transaction_levy:
+                base_rate: 0.0012
+                rebate_percentage: 0.00
+                chargeable_levy_after_rebate: 0.0012
+              cdsc_transaction_levy:
+                base_rate: 0.0008
+                rebate_percentage: 0.00
+                chargeable_levy_after_rebate: 0.0008
+            # Brokerage commissions apply standard rates for day trading
+            brokerage_rates: "Apply standard_rates brokerage structure"
+
+        - effective_from: 2022-08-12
+          effective_to: null
+          regulatory_period: "Day Trading Guidelines (Post-2022 statutory rates)"
+          notes: "Statutory rates supersede operational guidelines"
+          components:
+            rebated_statutory_fees:
+              exchange_transaction_levy:
+                base_rate: 0.0012
+                rebate_percentage: 0.05
+                chargeable_levy_after_rebate: 0.00114
+              cma_transaction_levy:
+                base_rate: 0.0008
+                rebate_percentage: 0.00
+                chargeable_levy_after_rebate: 0.0008
+              cdsc_transaction_levy:
+                base_rate: 0.0001
+                rebate_percentage: 0.00
+                chargeable_levy_after_rebate: 0.0001
+            # Brokerage commissions apply standard rates for day trading
+            brokerage_rates: "Apply standard_rates brokerage structure"

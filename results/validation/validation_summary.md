@@ -1,0 +1,183 @@
+# Artifact-level design-objective validation results
+
+| ID | Validation | Design objective | Result |
+|----|------------|------------------|--------|
+| V1 | Fee resolver boundary tests | Resolve rules deterministically (Activity 2 (iii)) | PASS |
+| V2 | T+3 settlement correctness across weekends and holidays | Make validity windows explicit (Activity 2 (ii)) | PASS |
+| V3 | Schema conformance on synthetic data generator output | Make data contracts inspectable (Activity 2 (iv)) | PASS |
+| V4 | Defensive-transform sanitization rates on a synthetic batch | Make defaults visible and contestable (Activity 2 (v)) | PASS |
+| V5 | Audit output stability across two synthetic runs | Emit truthful audit artifacts (Activity 2 (vi)) | PASS |
+
+## Details
+
+### V1: Fee resolver boundary tests
+```json
+{
+  "id": "V1",
+  "name": "Fee resolver boundary tests",
+  "objective": "Resolve rules deterministically (Activity 2 (iii))",
+  "n_cases": 8,
+  "n_passed": 8,
+  "passed": true,
+  "cases": [
+    {
+      "date": "2002-01-01",
+      "expected": "Pre-2012 estimates",
+      "actual": "Pre-2012 estimates",
+      "passed": true
+    },
+    {
+      "date": "2012-08-16",
+      "expected": "Pre-2012 estimates",
+      "actual": "Pre-2012 estimates",
+      "passed": true
+    },
+    {
+      "date": "2012-08-17",
+      "expected": "Legal Notice 88/2012",
+      "actual": "Legal Notice 88/2012",
+      "passed": true
+    },
+    {
+      "date": "2016-03-10",
+      "expected": "Legal Notice 88/2012",
+      "actual": "Legal Notice 88/2012",
+      "passed": true
+    },
+    {
+      "date": "2016-03-11",
+      "expected": "Legal Notice 35/2016",
+      "actual": "Legal Notice 35/2016",
+      "passed": true
+    },
+    {
+      "date": "2022-08-11",
+      "expected": "Legal Notice 35/2016",
+      "actual": "Legal Notice 35/2016",
+      "passed": true
+    },
+    {
+      "date": "2022-08-12",
+      "expected": "Legal Notice 135/2022",
+      "actual": "Legal Notice 135/2022",
+      "passed": true
+    },
+    {
+      "date": "2025-01-01",
+      "expected": "Legal Notice 135/2022",
+      "actual": "Legal Notice 135/2022",
+      "passed": true
+    }
+  ]
+}
+```
+
+### V2: T+3 settlement correctness across weekends and holidays
+```json
+{
+  "id": "V2",
+  "name": "T+3 settlement correctness across weekends and holidays",
+  "objective": "Make validity windows explicit (Activity 2 (ii))",
+  "n_cases": 8,
+  "n_passed": 8,
+  "passed": true,
+  "cases": [
+    {
+      "trade_date": "2023-03-14",
+      "expected_settlement": "2023-03-17",
+      "actual_settlement": "2023-03-17",
+      "passed": true
+    },
+    {
+      "trade_date": "2023-03-16",
+      "expected_settlement": "2023-03-21",
+      "actual_settlement": "2023-03-21",
+      "passed": true
+    },
+    {
+      "trade_date": "2023-12-28",
+      "expected_settlement": "2024-01-03",
+      "actual_settlement": "2024-01-03",
+      "passed": true
+    },
+    {
+      "trade_date": "2023-12-29",
+      "expected_settlement": "2024-01-04",
+      "actual_settlement": "2024-01-04",
+      "passed": true
+    },
+    {
+      "trade_date": "2024-04-30",
+      "expected_settlement": "2024-05-06",
+      "actual_settlement": "2024-05-06",
+      "passed": true
+    },
+    {
+      "trade_date": "2024-10-18",
+      "expected_settlement": "2024-10-24",
+      "actual_settlement": "2024-10-24",
+      "passed": true
+    },
+    {
+      "trade_date": "2024-12-23",
+      "expected_settlement": "2024-12-30",
+      "actual_settlement": "2024-12-30",
+      "passed": true
+    },
+    {
+      "trade_date": "2025-01-02",
+      "expected_settlement": "2025-01-07",
+      "actual_settlement": "2025-01-07",
+      "passed": true
+    }
+  ]
+}
+```
+
+### V3: Schema conformance on synthetic data generator output
+```json
+{
+  "id": "V3",
+  "name": "Schema conformance on synthetic data generator output",
+  "objective": "Make data contracts inspectable (Activity 2 (iv))",
+  "checks": {
+    "generator_exit_zero": true,
+    "intraday_columns": true,
+    "liquidity_columns": true,
+    "intraday_hours_match_{9..14}": true,
+    "intraday_tickers_match_{TKR1..3}": true,
+    "liquidity_tiers_match_documented_set": true
+  },
+  "intraday_rows": 540,
+  "liquidity_rows": 3,
+  "passed": true
+}
+```
+
+### V4: Defensive-transform sanitization rates on a synthetic batch
+```json
+{
+  "id": "V4",
+  "name": "Defensive-transform sanitization rates on a synthetic batch",
+  "objective": "Make defaults visible and contestable (Activity 2 (v))",
+  "n_features": 10000,
+  "nan_replacement_rate": 0.1,
+  "clipping_rate": 0.1527,
+  "output_in_unit_interval": true,
+  "passed": true
+}
+```
+
+### V5: Audit output stability across two synthetic runs
+```json
+{
+  "id": "V5",
+  "name": "Audit output stability across two synthetic runs",
+  "objective": "Emit truthful audit artifacts (Activity 2 (vi))",
+  "metrics_csv_byte_equal": true,
+  "results_summary_md_byte_equal": true,
+  "header_starts_with_documented_columns": true,
+  "csv_column_count": 25,
+  "passed": true
+}
+```
